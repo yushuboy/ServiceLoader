@@ -26,10 +26,11 @@
         public String getTitle() {
              return "the title from app module";
          }
-}
+ }
    ```
 # 4、使用
- - <big>**在ServiceFactory中加了缓存,通过ContentService service = ServiceFactory.getInstance().getService(ContentService.class)获取**</big>
+ - <big>**在ServiceFactory中加了缓存,通过
+ ContentService service = ServiceFactory.getInstance().getService(ContentService.class)获取**</big>
 
 ```
     public class ServiceFactory {
@@ -85,7 +86,6 @@
         }
         return false;
     }
-
-}
+ }
 
 ```
