@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tv.service.basic_live">
+
+    <application>
+        <activity
+            android:label="LiveActivity"
+            android:name=".LiveActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>
