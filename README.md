@@ -21,7 +21,7 @@
  - <big>**实现接口，并加上@AutoService**</big>
 - ```
   @AutoService(ContentService.class)
-public class ContentServiceImpl implements ContentService {
+  public class ContentServiceImpl implements ContentService {
         @Override
         public String getTitle() {
              return "the title from app module";
