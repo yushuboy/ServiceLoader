@@ -1,5 +1,6 @@
 # 1、Java SPI机制 ServiceLoader的基本使用
  -  <big>**Java SPI 实际上是“基于接口的编程＋策略模式＋配置文件”组合实现的动态加载机制，提供了通过interface寻找implement的方法。类似于IOC的思想，将装配的控制权移到程序之外，从而实现解耦。**</big>
+    ![Java SPI机制](https://upload-images.jianshu.io/upload_images/3436418-04439776966cfc8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
  -  <big>**适应场景：比如两个module，app依赖basic_live，但这时basic_live又用到了app模块中的服务。**</big>
 
 # 2、方式一
@@ -9,7 +10,7 @@
  - <big>**在具体实现的module中创建类来实现接口功能ContentServiceImpl，然后把全类名填到上面创建的文件中**</big>
 
 # 3、方式二
- - <big>**在方式一中，不仅要创建各种路径、文件，如果写错，所以Google发布了一个库autoservice帮助大家**</big>
+ - <big>**在方式一中，不仅要创建各种路径、文件，容易写错，所以Google发布了一个库autoservice帮助大家**</big>
  - <big>**在具体实现module中添加依赖，kotlin的可以用kpt**</big>
    
  - ```
@@ -30,11 +31,10 @@
    ```
 
 # 4、使用
- - <big>**在ServiceFactory中加了缓存,通过
- ContentService service = ServiceFactory.getInstance().getService(ContentService.class)获取**</big>
+ - <big>**在ServiceFactory中加了缓存,通过`ContentService service = ServiceFactory.getInstance().getService(ContentService.class)`获取**</big>
 
-```
-    public class ServiceFactory {
+- ```
+  public class ServiceFactory {
 
     private static class SingleTonHolder {
         private static final ServiceFactory INSTANCE = new ServiceFactory();
@@ -87,5 +87,5 @@
         }
         return false;
     }
- }
- ```
+  }
+  ```
